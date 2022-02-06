@@ -9,7 +9,7 @@ const forecast = (lat, lon, callback) => {
         }else if(body.message){
             callback("Unable to find location", undefined)
         }else{
-            callback(undefined, body.daily[0].weather[0].description + ". It has a " + body.current.temp + " degrees temperature and a relative humidity of " + body.current.humidity + "%")
+            callback(undefined, body.daily[0].weather[0].description + ". It has a " + body.current.temp + " degrees temperature and a relative humidity of " + body.current.humidity + "%. It also has a dew point of " + body.daily[0].dew_point + " and a wind speed of " + body.daily[0].wind_speed + ".")
         }
     })
 }
